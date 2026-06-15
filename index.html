@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SKINNA — Your AI Confidence Coach</title>
+<meta name="description" content="SKINNA analyses how you look and gives you a personalised, positive action plan to feel your best — in under 60 seconds.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1A1A2E;
+    --navy-mid: #16213E;
+    --navy-soft: #232842;
+    --purple: #6C63FF;
+    --purple-light: #A29BFE;
+    --cream: #F8F8FF;
+    --gray-300: #C8C7E0;
+    --gray-500: #888899;
+    --gray-800: #333344;
+    --success: #10B981;
+    --amber: #F59E0B;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--cream);
+    color: var(--gray-800);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Manrope', sans-serif;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+  }
+
+  a { text-decoration: none; color: inherit; }
+
+  .container {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ============ NAV ============ */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(248, 248, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(108, 99, 255, 0.08);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    max-width: 1160px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: var(--navy);
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .logo-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--purple), var(--purple-light));
+    display: inline-block;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray-800);
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--purple); }
+
+  .nav-cta {
+    background: var(--navy);
+    color: var(--white) !important;
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .nav-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(26, 26, 46, 0.25);
+  }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+  }
+
+  /* ============ HERO ============ */
+  .hero {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 55%, #1f2747 100%);
+    color: var(--white);
+    padding: 80px 24px 100px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(108, 99, 255, 0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -300px;
+    left: -150px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(162, 155, 254, 0.10) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(108, 99, 255, 0.15);
+    border: 1px solid rgba(108, 99, 255, 0.3);
+    color: var(--purple-light);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 24px;
+    letter-spacing: 0.02em;
+  }
+
+  .hero h1 {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.08;
+    color: var(--white);
+    margin-bottom: 22px;
+  }
+
+  .hero h1 .accent {
+    background: linear-gradient(135deg, var(--purple-light), var(--purple));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero p.sub {
+    font-size: 18px;
+    color: var(--gray-300);
+    max-width: 480px;
+    margin-bottom: 36px;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--purple);
+    color: var(--white);
+    padding: 15px 32px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    box-shadow: 0 8px 30px rgba(108, 99, 255, 0.35);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    background: #7a72ff;
+    box-shadow: 0 12px 36px rgba(108, 99, 255, 0.45);
+  }
+
+  .btn-ghost {
+    background: rgba(255,255,255,0.06);
+    color: var(--white);
+    padding: 15px 28px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 15px;
+    border: 1px solid rgba(255,255,255,0.18);
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .btn-ghost:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.3);
+  }
+
+  .store-note {
+    margin-top: 18px;
+    font-size: 13px;
+    color: var(--gray-500);
+  }
+
+  /* ============ SCORE RING (signature element) ============ */
+  .score-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 28px;
+    padding: 40px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  .score-card-label {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--purple-light);
+    margin-bottom: 28px;
+  }
+
+  .ring-wrap {
+    position: relative;
+    width: 220px;
+    height: 220px;
+  }
+
+  .ring-wrap svg { transform: rotate(-90deg); }
+
+  .ring-bg {
+    fill: none;
+    stroke: rgba(255,255,255,0.08);
+    stroke-width: 14;
+  }
+
+  .ring-progress {
+    fill: none;
+    stroke: var(--purple);
+    stroke-width: 14;
+    stroke-linecap: round;
+    stroke-dasharray: 628;
+    stroke-dashoffset: 628;
+    transition: stroke-dashoffset 1.8s cubic-bezier(0.16, 1, 0.3, 1), stroke 0.6s;
+  }
+
+  .ring-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ring-number {
+    font-family: 'Manrope', sans-serif;
+    font-size: 52px;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1;
+  }
+
+  .ring-of {
+    font-size: 13px;
+    color: var(--gray-500);
+    margin-top: 4px;
+  }
+
+  .score-breakdown {
+    width: 100%;
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .score-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .score-row-label {
+    font-size: 13px;
+    color: var(--gray-300);
+    width: 110px;
+    flex-shrink: 0;
+  }
+
+  .score-row-track {
+    flex: 1;
+    height: 6px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+
+  .score-row-fill {
+    height: 100%;
+    border-radius: 999px;
+    width: 0%;
+    transition: width 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .insight-pill {
+    margin-top: 28px;
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    border-radius: 14px;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #6EE7B7;
+    width: 100%;
+    text-align: center;
+  }
+
+  @media (max-width: 968px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+    .hero h1 { font-size: 40px; }
+    .hero p.sub { max-width: 100%; }
+    .score-card { max-width: 380px; margin: 0 auto; }
+  }
+
+  /* ============ SECTION SHARED ============ */
+  section { padding: 100px 0; }
+
+  .section-head {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 64px;
+  }
+
+  .section-eyebrow {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 14px;
+  }
+
+  .section-head h2 {
+    font-size: 38px;
+    font-weight: 800;
+    margin-bottom: 16px;
+  }
+
+  .section-head p {
+    font-size: 17px;
+    color: var(--gray-500);
+  }
+
+  /* ============ HOW IT WORKS ============ */
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .step-card {
+    background: var(--white);
+    border: 1px solid rgba(108, 99, 255, 0.08);
+    border-radius: 24px;
+    padding: 36px 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .step-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(26, 26, 46, 0.08);
+  }
+
+  .step-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    font-size: 24px;
+  }
+
+  .step-icon.s1 { background: rgba(108, 99, 255, 0.1); }
+  .step-icon.s2 { background: rgba(16, 185, 129, 0.1); }
+  .step-icon.s3 { background: rgba(245, 158, 11, 0.1); }
+
+  .step-card h3 {
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .step-card p {
+    font-size: 15px;
+    color: var(--gray-500);
+  }
+
+  .step-time {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--purple);
+    background: rgba(108, 99, 255, 0.08);
+    padding: 4px 12px;
+    border-radius: 999px;
+  }
+
+  @media (max-width: 860px) {
+    .steps { grid-template-columns: 1fr; }
+  }
+
+  /* ============ POSITIONING / INCLUSIVITY ============ */
+  .positioning {
+    background: var(--navy);
+    color: var(--white);
+    border-radius: 32px;
+    margin: 0 24px;
+    padding: 72px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .positioning::before {
+    content: '';
+    position: absolute;
+    top: -150px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(108,99,255,0.15) 0%, transparent 70%);
+  }
+
+  .positioning-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .positioning h2 {
+    color: var(--white);
+    font-size: 34px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  .positioning p {
+    color: var(--gray-300);
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+
+  .compare-table {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .compare-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .compare-cell {
+    border-radius: 14px;
+    padding: 16px 18px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .compare-cell.bad {
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.18);
+    color: #FCA5A5;
+  }
+
+  .compare-cell.good {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.22);
+    color: #6EE7B7;
+  }
+
+  .compare-head {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0 18px;
+    margin-bottom: -2px;
+  }
+
+  .compare-head.bad-h { color: rgba(252, 165, 165, 0.7); }
+  .compare-head.good-h { color: rgba(110, 231, 183, 0.7); }
+
+  @media (max-width: 860px) {
+    .positioning { padding: 48px 24px; border-radius: 24px; margin: 0 16px; }
+    .positioning-inner { grid-template-columns: 1fr; gap: 36px; }
+    .positioning h2 { font-size: 28px; }
+  }
+
+  /* ============ FOR EVERYONE ============ */
+  .audience {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .audience-card {
+    text-align: center;
+    padding: 36px 20px;
+    border-radius: 20px;
+    background: var(--white);
+    border: 1px solid rgba(108,99,255,0.08);
+  }
+
+  .audience-emoji {
+    font-size: 36px;
+    margin-bottom: 14px;
+  }
+
+  .audience-card h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .audience-card p {
+    font-size: 13px;
+    color: var(--gray-500);
+  }
+
+  @media (max-width: 860px) {
+    .audience { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* ============ CTA BAND ============ */
+  .cta-band {
+    background: linear-gradient(135deg, var(--purple) 0%, #5750e0 100%);
+    border-radius: 32px;
+    margin: 0 24px;
+    padding: 72px 48px;
+    text-align: center;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-band::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .cta-band h2 {
+    color: var(--white);
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-band p {
+    color: rgba(255,255,255,0.85);
+    font-size: 16px;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-band .btn-primary {
+    background: var(--white);
+    color: var(--purple);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-band .btn-primary:hover {
+    background: var(--cream);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 860px) {
+    .cta-band { padding: 48px 24px; border-radius: 24px; margin: 0 16px; }
+    .cta-band h2 { font-size: 26px; }
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    background: var(--navy);
+    color: var(--gray-300);
+    padding: 64px 0 32px;
+    margin-top: 60px;
+  }
+
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 48px;
+  }
+
+  .footer-brand .logo { color: var(--white); margin-bottom: 14px; }
+  .footer-brand p {
+    font-size: 14px;
+    color: var(--gray-500);
+    max-width: 280px;
+  }
+
+  .footer-col h5 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  .footer-col a {
+    display: block;
+    font-size: 14px;
+    color: var(--gray-500);
+    margin-bottom: 12px;
+    transition: color 0.2s;
+  }
+
+  .footer-col a:hover { color: var(--purple-light); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--gray-500);
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  @media (max-width: 860px) {
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .footer-brand { grid-column: 1 / -1; }
+  }
+
+  /* ============ FADE-IN ON SCROLL ============ */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fade-up { opacity: 1; transform: none; transition: none; }
+    .ring-progress, .score-row-fill { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo"><span class="logo-dot"></span>SKINNA</a>
+    <div class="nav-links">
+      <a href="#how-it-works">How it works</a>
+      <a href="#for-everyone">Who it's for</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+    <a href="#download" class="nav-cta">Get the app</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">✦ Your transformation, simplified</div>
+      <h1>Know your skin.<br>Own your <span class="accent">look.</span></h1>
+      <p class="sub">SKINNA is your AI confidence coach. Take a selfie, get your personalised SKINNA Score, and follow a simple plan to look — and feel — your absolute best.</p>
+      <div class="hero-ctas">
+        <a href="#download" class="btn-primary">Get SKINNA — it's free</a>
+        <a href="#how-it-works" class="btn-ghost">See how it works</a>
+      </div>
+      <p class="store-note">Free to start · No credit card needed · 16+</p>
+    </div>
+
+    <div class="score-card">
+      <div class="score-card-label">Your SKINNA Score</div>
+      <div class="ring-wrap">
+        <svg width="220" height="220" viewBox="0 0 220 220">
+          <circle class="ring-bg" cx="110" cy="110" r="100"></circle>
+          <circle class="ring-progress" id="ringProgress" cx="110" cy="110" r="100"></circle>
+        </svg>
+        <div class="ring-center">
+          <div class="ring-number" id="ringNumber">0</div>
+          <div class="ring-of">out of 100</div>
+        </div>
+      </div>
+      <div class="score-breakdown">
+        <div class="score-row">
+          <span class="score-row-label">Skin Health</span>
+          <div class="score-row-track"><div class="score-row-fill" data-target="78" style="background: var(--success)"></div></div>
+        </div>
+        <div class="score-row">
+          <span class="score-row-label">Hair</span>
+          <div class="score-row-track"><div class="score-row-fill" data-target="64" style="background: var(--purple)"></div></div>
+        </div>
+        <div class="score-row">
+          <span class="score-row-label">Grooming</span>
+          <div class="score-row-track"><div class="score-row-fill" data-target="71" style="background: var(--purple)"></div></div>
+        </div>
+        <div class="score-row">
+          <span class="score-row-label">Style Fit</span>
+          <div class="score-row-track"><div class="score-row-fill" data-target="58" style="background: var(--amber)"></div></div>
+        </div>
+        <div class="score-row">
+          <span class="score-row-label">Presence</span>
+          <div class="score-row-track"><div class="score-row-fill" data-target="69" style="background: var(--purple)"></div></div>
+        </div>
+      </div>
+      <div class="insight-pill">✨ Your biggest opportunity: a fresh hairstyle could lift your score by 12 points</div>
+    </div>
+  </div>
+</header>
+
+<section id="how-it-works">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div class="section-eyebrow">How it works</div>
+      <h2>One photo. Three steps. Real results.</h2>
+      <p>No quizzes, no endless forms. Just point, shoot, and get a plan built around you.</p>
+    </div>
+    <div class="steps">
+      <div class="step-card fade-up">
+        <div class="step-icon s1">📸</div>
+        <h3>Take a selfie</h3>
+        <p>Front camera, natural light, neutral expression. SKINNA guides you with a simple on-screen frame.</p>
+        <span class="step-time">5 seconds</span>
+      </div>
+      <div class="step-card fade-up">
+        <div class="step-icon s2">✨</div>
+        <h3>Get your SKINNA Score</h3>
+        <p>Our AI looks at your skin, hair, grooming, style and overall presence — and shows you exactly where you stand.</p>
+        <span class="step-time">Instant</span>
+      </div>
+      <div class="step-card fade-up">
+        <div class="step-icon s3">🎯</div>
+        <h3>Follow your plan</h3>
+        <p>Three clear, doable actions — ranked by impact. Re-scan in a week to watch your score climb.</p>
+        <span class="step-time">Your pace</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="positioning fade-up">
+    <div class="positioning-inner">
+      <div>
+        <h2>Built to lift you up — not tear you down.</h2>
+        <p>Most "look better" apps are harsh, judgemental, and built for one type of person. SKINNA was built differently — for every age, every skin tone, every body, with feedback that always points forward.</p>
+      </div>
+      <div class="compare-table">
+        <div class="compare-row">
+          <div class="compare-head bad-h">Other apps</div>
+          <div class="compare-head good-h">SKINNA</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-cell bad">Harsh "ratings" of your face</div>
+          <div class="compare-cell good">A score that shows your potential</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-cell bad">Built mostly for one type of user</div>
+          <div class="compare-cell good">Designed for every age, gender & skin tone</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-cell bad">Vague, generic tips</div>
+          <div class="compare-cell good">A specific plan, ranked by impact</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-cell bad">Encourages endless re-checking</div>
+          <div class="compare-cell good">Gentle daily limits, built for wellbeing</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="for-everyone">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div class="section-eyebrow">Who it's for</div>
+      <h2>Made for everyone figuring out their look</h2>
+      <p>From your first job interview to your fortieth birthday — SKINNA adapts its advice to you.</p>
+    </div>
+    <div class="audience">
+      <div class="audience-card fade-up">
+        <div class="audience-emoji">🎓</div>
+        <h4>Students</h4>
+        <p>Quick grooming wins before college, interviews and first impressions.</p>
+      </div>
+      <div class="audience-card fade-up">
+        <div class="audience-emoji">💼</div>
+        <h4>Professionals</h4>
+        <p>Polish your everyday presence for meetings, events and photos.</p>
+      </div>
+      <div class="audience-card fade-up">
+        <div class="audience-emoji">💍</div>
+        <h4>Big moments</h4>
+        <p>Weddings, dates, milestones — get camera-ready with a plan that works.</p>
+      </div>
+      <div class="audience-card fade-up">
+        <div class="audience-emoji">🌱</div>
+        <h4>Anyone, anytime</h4>
+        <p>No occasion needed. Just a simple way to look after yourself, weekly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="download">
+  <div class="cta-band fade-up">
+    <h2>Your best look starts with one photo.</h2>
+    <p>Free to download. Free to start. SKINNA is currently rolling out — join from your region's app store.</p>
+    <a href="#" class="btn-primary">Get SKINNA</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo"><span class="logo-dot"></span>SKINNA</div>
+        <p>Your AI confidence coach. One photo, one score, one plan — built to help you look and feel your best.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Product</h5>
+        <a href="#how-it-works">How it works</a>
+        <a href="#for-everyone">Who it's for</a>
+        <a href="#download">Get the app</a>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <a href="mailto:hello@skinna.xyz">hello@skinna.xyz</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SKINNA. All rights reserved.</span>
+      <span>Made with care for every face, every age, every skin tone.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Animate score ring + bars on load
+  window.addEventListener('load', () => {
+    const ring = document.getElementById('ringProgress');
+    const number = document.getElementById('ringNumber');
+    const circumference = 2 * Math.PI * 100; // 628.3
+    const targetScore = 72;
+
+    requestAnimationFrame(() => {
+      const offset = circumference - (targetScore / 100) * circumference;
+      ring.style.strokeDashoffset = offset;
+    });
+
+    // Animate the number count-up
+    let current = 0;
+    const duration = 1800;
+    const start = performance.now();
+    function tick(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      current = Math.round(eased * targetScore);
+      number.textContent = current;
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+
+    // Animate bars
+    document.querySelectorAll('.score-row-fill').forEach(el => {
+      const target = el.getAttribute('data-target');
+      setTimeout(() => { el.style.width = target + '%'; }, 200);
+    });
+  });
+
+  // Fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

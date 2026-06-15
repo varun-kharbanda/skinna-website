@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — SKINNA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1A1A2E;
+    --navy-mid: #16213E;
+    --purple: #6C63FF;
+    --purple-light: #A29BFE;
+    --cream: #F8F8FF;
+    --gray-300: #C8C7E0;
+    --gray-500: #888899;
+    --gray-800: #333344;
+    --white: #FFFFFF;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--cream);
+    color: var(--gray-800);
+    line-height: 1.7;
+  }
+  h1, h2, h3 { font-family: 'Manrope', sans-serif; color: var(--navy); letter-spacing: -0.01em; }
+  a { color: var(--purple); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  nav {
+    background: rgba(248, 248, 255, 0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(108, 99, 255, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .nav-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--navy);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo-dot {
+    width: 9px; height: 9px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--purple), var(--purple-light));
+  }
+  .back-link { font-size: 14px; font-weight: 600; color: var(--gray-500); }
+  .back-link:hover { color: var(--purple); }
+
+  header.page-head {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 100%);
+    color: var(--white);
+    padding: 56px 24px 48px;
+    text-align: center;
+  }
+  header.page-head .eyebrow {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--purple-light); margin-bottom: 12px;
+  }
+  header.page-head h1 { color: var(--white); font-size: 38px; font-weight: 800; margin-bottom: 10px; }
+  header.page-head p { color: var(--gray-300); font-size: 15px; }
+
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 24px 100px;
+  }
+
+  .summary-box {
+    background: var(--white);
+    border: 1px solid rgba(108,99,255,0.12);
+    border-radius: 18px;
+    padding: 28px 30px;
+    margin-bottom: 48px;
+  }
+  .summary-box h2 { font-size: 18px; margin-bottom: 14px; }
+  .summary-box ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .summary-box li {
+    font-size: 15px; color: var(--gray-800);
+    padding-left: 28px; position: relative;
+  }
+  .summary-box li::before {
+    content: '✓'; position: absolute; left: 0; top: 0;
+    color: #10B981; font-weight: 700;
+  }
+
+  section.policy-section { margin-bottom: 40px; }
+  section.policy-section h2 {
+    font-size: 22px; font-weight: 700; margin-bottom: 14px;
+    padding-bottom: 12px; border-bottom: 2px solid rgba(108,99,255,0.1);
+  }
+  section.policy-section h3 {
+    font-size: 16px; font-weight: 700; margin: 22px 0 8px;
+  }
+  section.policy-section p { font-size: 15px; color: var(--gray-800); margin-bottom: 12px; }
+  section.policy-section ul, section.policy-section ol {
+    font-size: 15px; color: var(--gray-800); margin: 0 0 12px 22px;
+  }
+  section.policy-section li { margin-bottom: 6px; }
+  section.policy-section table {
+    width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px;
+  }
+  section.policy-section th, section.policy-section td {
+    border: 1px solid rgba(108,99,255,0.12); padding: 10px 14px; text-align: left;
+  }
+  section.policy-section th {
+    background: rgba(108,99,255,0.06); font-weight: 700; color: var(--navy);
+  }
+
+  .highlight-box {
+    background: rgba(108,99,255,0.06);
+    border-left: 4px solid var(--purple);
+    border-radius: 0 12px 12px 0;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+
+  .toc {
+    background: var(--white);
+    border: 1px solid rgba(108,99,255,0.1);
+    border-radius: 18px;
+    padding: 24px 28px;
+    margin-bottom: 40px;
+  }
+  .toc h2 { font-size: 16px; margin-bottom: 12px; }
+  .toc ul { margin: 0; padding-left: 0; font-size: 14px; }
+  .toc li { margin-bottom: 8px; padding: 6px 10px; border-radius: 8px; transition: background 0.15s; }
+  .toc li:hover { background: rgba(108,99,255,0.05); }
+  .toc a { color: var(--gray-800); font-weight: 500; }
+  .toc a:hover { color: var(--purple); }
+
+  footer {
+    background: var(--navy);
+    color: var(--gray-500);
+    text-align: center;
+    padding: 32px 24px;
+    font-size: 13px;
+  }
+  footer a { color: var(--purple-light); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><span class="logo-dot"></span>SKINNA</a>
+    <a href="index.html" class="back-link">← Back to home</a>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="eyebrow">Legal</div>
+  <h1>Privacy Policy</h1>
+  <p>Last updated: 14 June 2026 · Effective date: 14 June 2026</p>
+</header>
+
+<main>
+
+  <div class="summary-box">
+    <h2>The short version</h2>
+    <ul>
+      <li>Your photos are analysed instantly by AI and are <strong>never stored</strong> on our servers.</li>
+      <li>We don't sell your data to anyone, ever.</li>
+      <li>You can delete your account and all your data at any time, instantly, from the app.</li>
+      <li>SKINNA is for users aged 16 and above.</li>
+      <li>We only share data with the services that make SKINNA work (AI analysis, hosting, payments) — never for advertising.</li>
+    </ul>
+  </div>
+
+  <div class="toc">
+    <h2>Contents</h2>
+    <ul style="list-style:none;">
+      <li><a href="#intro">1. Introduction</a></li>
+      <li><a href="#info-we-collect">2. Information we collect</a></li>
+      <li><a href="#photos">3. How we handle your photos</a></li>
+      <li><a href="#how-we-use">4. How we use your information</a></li>
+      <li><a href="#third-parties">5. Third-party service providers</a></li>
+      <li><a href="#data-sharing">6. When we share information</a></li>
+      <li><a href="#retention">7. Data retention</a></li>
+      <li><a href="#your-rights">8. Your rights and choices</a></li>
+      <li><a href="#children">9. Children's privacy and age requirements</a></li>
+      <li><a href="#security">10. Security</a></li>
+      <li><a href="#international">11. International data transfers</a></li>
+      <li><a href="#india-dpdp">12. Your rights under India's DPDP Act, 2023</a></li>
+      <li><a href="#gdpr">13. Your rights under GDPR (EU/UK users)</a></li>
+      <li><a href="#ccpa">14. Your rights under CCPA (California users)</a></li>
+      <li><a href="#changes">15. Changes to this policy</a></li>
+      <li><a href="#contact">16. Contact us</a></li>
+    </ul>
+  </div>
+
+  <section class="policy-section" id="intro">
+    <h2>1. Introduction</h2>
+    <p>This Privacy Policy explains how SKINNA ("we", "us", "our", "SKINNA") collects, uses, shares, and protects information when you use the SKINNA mobile application and the skinna.xyz website (together, the "Service").</p>
+    <p>SKINNA is an AI-powered personal confidence and style coaching app. We built SKINNA with privacy as a core design principle — particularly around how your photos are handled. Please read this policy carefully. By creating an account or using SKINNA, you agree to the practices described here.</p>
+    <p>If you do not agree with this policy, please do not use the Service.</p>
+  </section>
+
+  <section class="policy-section" id="info-we-collect">
+    <h2>2. Information we collect</h2>
+
+    <h3>2.1 Information you provide directly</h3>
+    <ul>
+      <li><strong>Account information:</strong> email address and password (or sign-in via Apple/Google, if used) when you create an account.</li>
+      <li><strong>Profile information:</strong> your age group, gender (optional), primary improvement goal, and time availability, collected during onboarding.</li>
+      <li><strong>Date of birth:</strong> collected during sign-up to verify you meet our minimum age requirement of 16.</li>
+      <li><strong>Photos:</strong> selfie images you capture or upload for analysis. See Section 3 for how these are handled.</li>
+      <li><strong>Communications:</strong> if you contact us for support, we collect the information you provide in that communication.</li>
+    </ul>
+
+    <h3>2.2 Information collected automatically</h3>
+    <ul>
+      <li><strong>Usage data:</strong> features used, scan frequency, actions completed, app navigation patterns.</li>
+      <li><strong>Device information:</strong> device type, operating system version, app version, language settings.</li>
+      <li><strong>Diagnostic data:</strong> crash reports and performance data, used solely to fix bugs and improve stability.</li>
+    </ul>
+
+    <h3>2.3 Information from third parties</h3>
+    <ul>
+      <li><strong>Subscription and payment status</strong> from our payments processor (RevenueCat) and the relevant app store (Apple App Store / Google Play), including subscription tier and renewal status. We do not receive or store your card details.</li>
+      <li><strong>Authentication data</strong> if you sign in using Apple or Google Sign-In (your name and email as provided by that service).</li>
+    </ul>
+  </section>
+
+  <section class="policy-section" id="photos">
+    <h2>3. How we handle your photos</h2>
+    <div class="highlight-box">
+      <strong>Your selfie photos are processed in real time and are not stored on our servers.</strong> Each photo is sent securely to our AI analysis provider for the sole purpose of generating your SKINNA Score and personalised recommendations, and is discarded immediately after analysis.
+    </div>
+    <p>Specifically:</p>
+    <ol>
+      <li>When you take or upload a photo, it is compressed on your device and sent over an encrypted connection (HTTPS) directly to our AI analysis provider (Anthropic, see Section 5).</li>
+      <li>The AI provider processes the image to generate the analysis results (your scores, insights, and recommendations).</li>
+      <li>The <strong>results</strong> of the analysis (numerical scores, text insights, recommendations) are saved to your account so you can track your progress over time.</li>
+      <li>The <strong>photo itself</strong> is not retained by SKINNA after the analysis is complete.</li>
+    </ol>
+    <p>We do not use your photos to train AI models, do not share your photos with advertisers, and do not use facial recognition to identify you across services.</p>
+  </section>
+
+  <section class="policy-section" id="how-we-use">
+    <h2>4. How we use your information</h2>
+    <p>We use the information we collect to:</p>
+    <ul>
+      <li>Provide, operate, and maintain the Service, including generating your SKINNA Score and action plans.</li>
+      <li>Create and manage your account, and authenticate your sign-ins.</li>
+      <li>Track your progress over time (score history, streaks, completed actions).</li>
+      <li>Process subscription payments and manage your subscription status.</li>
+      <li>Send you service-related notifications (e.g. scan reminders), where you have enabled them.</li>
+      <li>Respond to your support requests.</li>
+      <li>Monitor, debug, and improve the performance, stability, and features of the Service.</li>
+      <li>Comply with legal obligations and enforce our Terms of Service.</li>
+    </ul>
+    <p>We do <strong>not</strong> use your information to serve third-party advertising, and we do not sell your personal information to data brokers or advertisers.</p>
+  </section>
+
+  <section class="policy-section" id="third-parties">
+    <h2>5. Third-party service providers</h2>
+    <p>To operate SKINNA, we rely on a small number of trusted service providers ("processors"), each acting under contractual obligations to protect your data:</p>
+    <table>
+      <tr><th>Provider</th><th>Purpose</th><th>Data shared</th></tr>
+      <tr>
+        <td>Anthropic (Claude AI)</td>
+        <td>Analyses your photo to generate your SKINNA Score and recommendations</td>
+        <td>Your photo (processed in real time, not retained by SKINNA), your age group and stated goals</td>
+      </tr>
+      <tr>
+        <td>Supabase</td>
+        <td>Secure database hosting, authentication, and account management</td>
+        <td>Account details, profile data, scan history (scores and text only, not photos)</td>
+      </tr>
+      <tr>
+        <td>RevenueCat</td>
+        <td>Manages subscriptions and in-app purchases</td>
+        <td>Anonymous user identifier, subscription status</td>
+      </tr>
+      <tr>
+        <td>Apple App Store / Google Play</td>
+        <td>App distribution and payment processing</td>
+        <td>Payment details (handled entirely by Apple/Google — SKINNA never sees your card information)</td>
+      </tr>
+    </table>
+    <p>Each of these providers is contractually bound to use your information only to provide services to SKINNA, and not for their own independent purposes.</p>
+  </section>
+
+  <section class="policy-section" id="data-sharing">
+    <h2>6. When we share information</h2>
+    <p>Beyond the service providers listed above, we may share information:</p>
+    <ul>
+      <li><strong>With your consent</strong> — for example, if you use the "Share my score" feature to send your results to others.</li>
+      <li><strong>For legal reasons</strong> — if required by law, regulation, legal process, or governmental request, or to protect the rights, property, or safety of SKINNA, our users, or the public.</li>
+      <li><strong>In a business transfer</strong> — if SKINNA is involved in a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction. We will notify you of any such change.</li>
+    </ul>
+    <p>We do not sell, rent, or trade your personal information to third parties for marketing purposes.</p>
+  </section>
+
+  <section class="policy-section" id="retention">
+    <h2>7. Data retention</h2>
+    <ul>
+      <li><strong>Photos:</strong> not retained — processed in real time and discarded (see Section 3).</li>
+      <li><strong>Account and profile data:</strong> retained for as long as your account is active.</li>
+      <li><strong>Scan history (scores, insights, actions):</strong> retained for as long as your account is active, so you can track your progress.</li>
+      <li><strong>After account deletion:</strong> all personal data, scan history, and profile information is permanently deleted from our active systems, typically within 30 days. Some information may be retained for a limited period in backups or where required by law (e.g. financial records for tax purposes).</li>
+    </ul>
+  </section>
+
+  <section class="policy-section" id="your-rights">
+    <h2>8. Your rights and choices</h2>
+    <h3>8.1 Access and update your information</h3>
+    <p>You can view and update your profile information (goal, time availability, age group) at any time from the Profile section of the app.</p>
+
+    <h3>8.2 Delete your account and data</h3>
+    <p>You can permanently delete your account and all associated data at any time using the <strong>"Delete all my data"</strong> option in Profile → Privacy. This action is immediate and cannot be undone.</p>
+
+    <h3>8.3 Notifications</h3>
+    <p>You can enable or disable scan reminder notifications at any time in Profile → Notifications, or through your device's system settings.</p>
+
+    <h3>8.4 Data portability</h3>
+    <p>You can request an export of your scan history and progress data by contacting us at the email address in Section 16.</p>
+  </section>
+
+  <section class="policy-section" id="children">
+    <h2>9. Children's privacy and age requirements</h2>
+    <div class="highlight-box">
+      <strong>SKINNA is intended for users aged 16 and older.</strong> We do not knowingly collect personal information from anyone under 16.
+    </div>
+    <p>During sign-up, we ask for your date of birth to verify you meet this minimum age requirement. If we become aware that we have collected personal information from someone under 16, we will take steps to delete that information promptly.</p>
+    <p>If you are a parent or guardian and believe your child under 16 has provided us with personal information, please contact us using the details in Section 16 so we can take appropriate action.</p>
+  </section>
+
+  <section class="policy-section" id="security">
+    <h2>10. Security</h2>
+    <p>We take reasonable technical and organisational measures designed to protect your information, including:</p>
+    <ul>
+      <li>Encryption of data in transit (HTTPS/TLS) between your device and our servers.</li>
+      <li>Row-level security controls ensuring your data is only accessible to your own account.</li>
+      <li>Access controls limiting which systems and personnel can access stored data.</li>
+    </ul>
+    <p>However, no method of transmission over the internet or electronic storage is 100% secure. While we strive to protect your information, we cannot guarantee absolute security.</p>
+  </section>
+
+  <section class="policy-section" id="international">
+    <h2>11. International data transfers</h2>
+    <p>SKINNA's service providers operate data centres in various regions, including the United States, the European Union, and Asia. By using the Service, you understand that your information may be transferred to, stored, and processed in a country other than your own, which may have different data protection laws than your country of residence. Where required, we rely on appropriate safeguards (such as standard contractual clauses) for such transfers.</p>
+  </section>
+
+  <section class="policy-section" id="india-dpdp">
+    <h2>12. Your rights under India's Digital Personal Data Protection Act, 2023</h2>
+    <p>If you are located in India, you have the following rights under the DPDP Act, 2023:</p>
+    <ul>
+      <li><strong>Right to access:</strong> a summary of your personal data we hold and the processing activities undertaken.</li>
+      <li><strong>Right to correction and erasure:</strong> request correction of inaccurate data or erasure of data that is no longer necessary (also available directly via the app's "Delete all my data" feature).</li>
+      <li><strong>Right to grievance redressal:</strong> raise concerns about how your data is processed by contacting us (Section 16). We aim to respond within 30 days.</li>
+      <li><strong>Right to nominate:</strong> nominate another individual to exercise these rights on your behalf in the event of death or incapacity, by contacting us.</li>
+    </ul>
+    <p>SKINNA acts as a "Data Fiduciary" under the DPDP Act with respect to personal data of users in India.</p>
+  </section>
+
+  <section class="policy-section" id="gdpr">
+    <h2>13. Your rights under GDPR (EU and UK users)</h2>
+    <p>If you are located in the European Economic Area or the United Kingdom, you have the following rights under the General Data Protection Regulation:</p>
+    <ul>
+      <li><strong>Right of access</strong> to your personal data.</li>
+      <li><strong>Right to rectification</strong> of inaccurate data.</li>
+      <li><strong>Right to erasure</strong> ("right to be forgotten").</li>
+      <li><strong>Right to restrict processing</strong> in certain circumstances.</li>
+      <li><strong>Right to data portability.</strong></li>
+      <li><strong>Right to object</strong> to processing based on legitimate interests.</li>
+      <li><strong>Right to withdraw consent</strong> at any time, where processing is based on consent.</li>
+      <li><strong>Right to lodge a complaint</strong> with your local data protection supervisory authority.</li>
+    </ul>
+    <p><strong>Legal basis for processing:</strong> we process your information based on (i) performance of our contract with you (providing the Service), (ii) your consent (e.g. for optional notifications), and (iii) our legitimate interests in operating, securing, and improving the Service.</p>
+  </section>
+
+  <section class="policy-section" id="ccpa">
+    <h2>14. Your rights under CCPA (California users)</h2>
+    <p>If you are a California resident, you have the right to:</p>
+    <ul>
+      <li>Know what personal information we collect, use, and disclose.</li>
+      <li>Request deletion of your personal information.</li>
+      <li>Opt out of the sale or sharing of personal information. <strong>SKINNA does not sell or share personal information</strong> as defined under the CCPA.</li>
+      <li>Non-discrimination for exercising your privacy rights.</li>
+    </ul>
+  </section>
+
+  <section class="policy-section" id="changes">
+    <h2>15. Changes to this policy</h2>
+    <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or for other operational reasons. If we make material changes, we will notify you through the app or by other means before the changes take effect. The "Last updated" date at the top of this page indicates when this policy was last revised.</p>
+  </section>
+
+  <section class="policy-section" id="contact">
+    <h2>16. Contact us</h2>
+    <p>If you have questions, concerns, or requests regarding this Privacy Policy or your personal information, please contact us at:</p>
+    <p><strong>Email:</strong> <a href="mailto:privacy@skinna.xyz">privacy@skinna.xyz</a></p>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 SKINNA. See also our <a href="terms.html">Terms of Service</a>.</p>
+</footer>
+
+</body>
+</html>
