@@ -4,7 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SKINNA — Your AI Confidence Coach</title>
-<meta name="description" content="SKINNA analyses how you look and gives you a personalised, positive action plan to feel your best — in under 60 seconds.">
+<meta name="description" content="SKINNA is your AI confidence coach. Take a selfie, get your personalised SKINNA Score, and follow a simple plan to look and feel your best — built to lift you up, not tear you down.">
+<link rel="canonical" href="https://skinna.xyz/">
+<meta name="theme-color" content="#1A1A2E">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SKINNA">
+<meta property="og:title" content="SKINNA — Your AI Confidence Coach">
+<meta property="og:description" content="Take a selfie, get your personalised SKINNA Score, and follow a simple plan to look and feel your best. Built to lift you up, not tear you down.">
+<meta property="og:url" content="https://skinna.xyz/">
+<meta property="og:image" content="https://skinna.xyz/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SKINNA — Your AI Confidence Coach">
+<meta name="twitter:description" content="Take a selfie, get your personalised SKINNA Score, and follow a simple plan to look and feel your best.">
+<meta name="twitter:image" content="https://skinna.xyz/og-image.png">
+
+<!-- Favicon -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -17,6 +41,7 @@
     --purple-light: #A29BFE;
     --cream: #F8F8FF;
     --gray-300: #C8C7E0;
+    --gray-400: #A6A6BD;
     --gray-500: #888899;
     --gray-800: #333344;
     --success: #10B981;
@@ -27,6 +52,14 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   html { scroll-behavior: smooth; }
+
+  /* Visible keyboard focus on all interactive elements */
+  a:focus-visible,
+  button:focus-visible {
+    outline: 3px solid var(--purple-light);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
 
   body {
     font-family: 'Inter', -apple-system, sans-serif;
@@ -246,7 +279,7 @@
   .store-note {
     margin-top: 18px;
     font-size: 13px;
-    color: var(--gray-500);
+    color: var(--gray-300);
   }
 
   /* ============ SCORE RING (signature element) ============ */
@@ -669,7 +702,7 @@
   .footer-brand .logo { color: var(--white); margin-bottom: 14px; }
   .footer-brand p {
     font-size: 14px;
-    color: var(--gray-500);
+    color: var(--gray-400);
     max-width: 280px;
   }
 
@@ -685,7 +718,7 @@
   .footer-col a {
     display: block;
     font-size: 14px;
-    color: var(--gray-500);
+    color: var(--gray-400);
     margin-bottom: 12px;
     transition: color 0.2s;
   }
@@ -699,7 +732,7 @@
     justify-content: space-between;
     align-items: center;
     font-size: 13px;
-    color: var(--gray-500);
+    color: var(--gray-400);
     flex-wrap: wrap;
     gap: 12px;
   }
@@ -735,8 +768,9 @@
     <div class="nav-links">
       <a href="#how-it-works">How it works</a>
       <a href="#for-everyone">Who it's for</a>
+      <a href="about.html">About</a>
+      <a href="support.html">Support</a>
       <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
     </div>
     <a href="#download" class="nav-cta">Get the app</a>
   </div>
@@ -908,6 +942,7 @@
         <h5>Product</h5>
         <a href="#how-it-works">How it works</a>
         <a href="#for-everyone">Who it's for</a>
+        <a href="about.html">About</a>
         <a href="#download">Get the app</a>
       </div>
       <div class="footer-col">
@@ -916,8 +951,9 @@
         <a href="terms.html">Terms of Service</a>
       </div>
       <div class="footer-col">
-        <h5>Contact</h5>
-        <a href="mailto:hello@skinna.xyz">hello@skinna.xyz</a>
+        <h5>Support</h5>
+        <a href="support.html">Help &amp; FAQ</a>
+        <a href="mailto:support@skinna.xyz">support@skinna.xyz</a>
       </div>
     </div>
     <div class="footer-bottom">

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support &amp; Help — SKINNA</title>
+<meta name="description" content="Get help with SKINNA. Find answers about how the AI works, your photo privacy, subscriptions, account deletion, and how to reach our support team.">
+<link rel="canonical" href="https://skinna.xyz/support.html">
+<meta name="theme-color" content="#1A1A2E">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SKINNA">
+<meta property="og:title" content="Support &amp; Help — SKINNA">
+<meta property="og:description" content="Answers about how SKINNA works, photo privacy, subscriptions, and account deletion — plus how to reach our team.">
+<meta property="og:url" content="https://skinna.xyz/support.html">
+<meta property="og:image" content="https://skinna.xyz/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Support &amp; Help — SKINNA">
+<meta name="twitter:description" content="Answers about how SKINNA works, photo privacy, subscriptions, and account deletion.">
+<meta name="twitter:image" content="https://skinna.xyz/og-image.png">
+
+<!-- Favicon -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1A1A2E;
+    --navy-mid: #16213E;
+    --purple: #6C63FF;
+    --purple-light: #A29BFE;
+    --cream: #F8F8FF;
+    --gray-300: #C8C7E0;
+    --gray-400: #A6A6BD;
+    --gray-500: #888899;
+    --gray-800: #333344;
+    --success: #10B981;
+    --white: #FFFFFF;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--cream);
+    color: var(--gray-800);
+    line-height: 1.7;
+  }
+  h1, h2, h3 { font-family: 'Manrope', sans-serif; color: var(--navy); letter-spacing: -0.01em; }
+  a { color: var(--purple); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  a:focus-visible {
+    outline: 3px solid var(--purple-light);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  summary:focus-visible {
+    outline: 3px solid var(--purple);
+    outline-offset: 2px;
+    border-radius: 10px;
+  }
+
+  nav {
+    background: rgba(248, 248, 255, 0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(108, 99, 255, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .nav-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--navy);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo-dot {
+    width: 9px; height: 9px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--purple), var(--purple-light));
+  }
+  .back-link { font-size: 14px; font-weight: 600; color: var(--gray-500); }
+  .back-link:hover { color: var(--purple); }
+
+  header.page-head {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 100%);
+    color: var(--white);
+    padding: 56px 24px 48px;
+    text-align: center;
+  }
+  header.page-head .eyebrow {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--purple-light); margin-bottom: 12px;
+  }
+  header.page-head h1 { color: var(--white); font-size: 38px; font-weight: 800; margin-bottom: 10px; }
+  header.page-head p { color: var(--gray-300); font-size: 15px; max-width: 540px; margin: 0 auto; }
+
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 24px 100px;
+  }
+
+  .help-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+  .help-card {
+    background: var(--white);
+    border: 1px solid rgba(108,99,255,0.12);
+    border-radius: 18px;
+    padding: 24px 26px;
+  }
+  .help-card h3 { font-size: 17px; margin-bottom: 6px; }
+  .help-card p { font-size: 14px; color: var(--gray-500); margin-bottom: 12px; }
+  .help-card a { font-size: 14px; font-weight: 600; }
+  @media (max-width: 620px) {
+    .help-grid { grid-template-columns: 1fr; }
+  }
+
+  .section-title {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .section-intro { font-size: 15px; color: var(--gray-500); margin-bottom: 28px; }
+
+  .faq { margin-bottom: 48px; }
+  details.faq-item {
+    background: var(--white);
+    border: 1px solid rgba(108,99,255,0.12);
+    border-radius: 14px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  details.faq-item[open] {
+    border-color: rgba(108,99,255,0.3);
+  }
+  summary.faq-q {
+    list-style: none;
+    cursor: pointer;
+    padding: 18px 22px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  summary.faq-q::-webkit-details-marker { display: none; }
+  summary.faq-q .chev {
+    flex-shrink: 0;
+    width: 22px; height: 22px;
+    color: var(--purple);
+    transition: transform 0.25s ease;
+  }
+  details.faq-item[open] summary.faq-q .chev { transform: rotate(180deg); }
+  .faq-a {
+    padding: 0 22px 20px;
+    font-size: 15px;
+    color: var(--gray-800);
+  }
+  .faq-a p { margin-bottom: 10px; }
+  .faq-a p:last-child { margin-bottom: 0; }
+  .faq-a strong { color: var(--navy); }
+
+  .contact-card {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+    color: var(--white);
+    border-radius: 24px;
+    padding: 40px 36px;
+    text-align: center;
+  }
+  .contact-card h2 { color: var(--white); font-size: 24px; margin-bottom: 10px; }
+  .contact-card p { color: var(--gray-300); font-size: 15px; margin-bottom: 22px; }
+  .contact-btn {
+    display: inline-block;
+    background: var(--purple);
+    color: var(--white) !important;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 14px 30px;
+    border-radius: 999px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 8px 24px rgba(108, 99, 255, 0.35);
+  }
+  .contact-btn:hover { transform: translateY(-2px); text-decoration: none; }
+  .contact-note { font-size: 13px; color: var(--gray-400); margin-top: 18px; margin-bottom: 0; }
+
+  footer {
+    background: var(--navy);
+    color: #A6A6BD;
+    text-align: center;
+    padding: 32px 24px;
+    font-size: 13px;
+  }
+  footer a { color: var(--purple-light); }
+
+  @media (prefers-reduced-motion: reduce) {
+    summary.faq-q .chev { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><span class="logo-dot"></span>SKINNA</a>
+    <a href="index.html" class="back-link">← Back to home</a>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="eyebrow">Support</div>
+  <h1>How can we help?</h1>
+  <p>Answers to the questions we hear most — and a direct line to a real person whenever you need one.</p>
+</header>
+
+<main>
+
+  <div class="help-grid">
+    <div class="help-card">
+      <h3>Privacy &amp; your photos</h3>
+      <p>How your selfies are handled and how to manage your data.</p>
+      <a href="privacy.html">Read the Privacy Policy →</a>
+    </div>
+    <div class="help-card">
+      <h3>Terms of Service</h3>
+      <p>The rules of the road for using SKINNA.</p>
+      <a href="terms.html">Read the Terms →</a>
+    </div>
+  </div>
+
+  <div class="faq">
+    <h2 class="section-title">Frequently asked questions</h2>
+    <p class="section-intro">Tap any question to expand the answer.</p>
+
+    <details class="faq-item">
+      <summary class="faq-q">
+        How does the AI actually work?
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="faq-a">
+        <p>You take a selfie in good light, and SKINNA sends that single photo securely to our AI for analysis. The AI looks at five areas — skin health, hair, grooming, style fit, and overall presence — and turns what it sees into your SKINNA Score and a short, prioritised action plan.</p>
+        <p>It's designed to be encouraging and practical: every result points you toward a clear next step, never a judgement.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-q">
+        Is my photo stored anywhere?
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="faq-a">
+        <p><strong>No.</strong> Your selfie is analysed in real time and is not stored on our servers afterwards. Only the <em>results</em> of the analysis — your scores and recommendations — are saved to your account so you can track progress over time.</p>
+        <p>We never use your photos to train AI models, and we never share them with advertisers. Full details are in our <a href="privacy.html">Privacy Policy</a>.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-q">
+        How do I cancel my subscription?
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="faq-a">
+        <p>Subscriptions are billed through your app store, so you cancel there:</p>
+        <p><strong>iPhone / iPad:</strong> Settings → tap your name → Subscriptions → SKINNA → Cancel Subscription.</p>
+        <p><strong>Android:</strong> Open the Google Play Store → tap your profile icon → Payments &amp; subscriptions → Subscriptions → SKINNA → Cancel.</p>
+        <p>You'll keep access to paid features until the end of your current billing period.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-q">
+        How do I delete my account and data?
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="faq-a">
+        <p>In the app, go to <strong>Profile → Privacy → "Delete all my data."</strong> This permanently removes your account, scan history, and profile information. It's immediate and can't be undone.</p>
+        <p>If you can't access the app for any reason, email us at <a href="mailto:support@skinna.xyz">support@skinna.xyz</a> and we'll take care of it for you.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-q">
+        Is SKINNA safe for teens?
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="faq-a">
+        <p>SKINNA is built for ages <strong>16 and up</strong>. Everything about the experience is designed to be positive and forward-looking — we use gentle, motivational language, never harsh "ratings," and we build in daily limits to encourage a healthy relationship with the app rather than constant re-checking.</p>
+        <p>SKINNA is a wellness and self-care companion, not a measure of worth. If you ever feel distressed about your appearance, we encourage speaking with a trusted adult or a qualified professional.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-q">
+        Why did my score change between scans?
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="faq-a">
+        <p>Lighting, camera angle, and expression all affect what the AI sees, so small movements between scans are normal. For the most consistent results, scan in soft, even daylight, hold the phone at eye level, and keep a relaxed, neutral expression.</p>
+        <p>Your score is best read as a trend over time, not a single number to obsess over.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-q">
+        Is SKINNA free?
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="faq-a">
+        <p>Yes — you can start for free, with a set number of scans and core features included. Optional paid plans unlock more frequent scans and expanded guidance. You'll always see the price clearly before you commit, and there's no charge to download or create an account.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-q">
+        Does SKINNA give medical or dermatological advice?
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </summary>
+      <div class="faq-a">
+        <p>No. SKINNA offers general self-care, grooming, and style suggestions for informational purposes — it is not a medical device and does not diagnose or treat any condition. For anything health-related, including skin concerns, please consult a qualified dermatologist or doctor. See our <a href="terms.html">Terms of Service</a> for the full disclaimer.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="contact-card">
+    <h2>Still need a hand?</h2>
+    <p>Email our team directly — we read every message and aim to reply within 1–2 business days.</p>
+    <a class="contact-btn" href="mailto:support@skinna.xyz">Email support@skinna.xyz</a>
+    <p class="contact-note">For privacy requests: <a href="mailto:privacy@skinna.xyz" style="color:var(--purple-light)">privacy@skinna.xyz</a> · For legal: <a href="mailto:legal@skinna.xyz" style="color:var(--purple-light)">legal@skinna.xyz</a></p>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 SKINNA · <a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></p>
+</footer>
+
+</body>
+</html>
