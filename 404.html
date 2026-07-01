@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page not found — SKINNA</title>
+<meta name="description" content="The page you were looking for couldn't be found. Head back to SKINNA.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FF5C9D">
+
+<!-- Favicon -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #2A2140;
+    --ink-soft: #6B6580;
+    --violet: #7C3AED;
+    --pink: #FF5C9D;
+    --coral: #FF8A5B;
+    --white: #FFFFFF;
+    --grad-hot: linear-gradient(135deg, #7C3AED 0%, #A32ED0 52%, #FF5C9D 100%);
+    --grad-text: linear-gradient(120deg, #FF5C9D, #A32ED0);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(255, 138, 91, 0.28) 0%, transparent 42%),
+      radial-gradient(circle at 85% 12%, rgba(255, 92, 157, 0.30) 0%, transparent 45%),
+      radial-gradient(circle at 70% 92%, rgba(124, 92, 252, 0.22) 0%, transparent 48%),
+      linear-gradient(160deg, #FFF1E8 0%, #FFE9F1 50%, #F2ECFF 100%);
+    color: var(--ink);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
+    overflow: hidden;
+    position: relative;
+  }
+  .wrap { position: relative; z-index: 1; max-width: 480px; }
+  .logo {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: var(--ink);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 40px;
+  }
+  .logo-dot {
+    width: 11px; height: 11px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--pink), var(--coral));
+    box-shadow: 0 0 0 4px rgba(255, 92, 157, 0.14);
+  }
+  .code {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 104px;
+    line-height: 1;
+    background: var(--grad-text);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    color: var(--ink);
+    font-size: 28px;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+  }
+  p { color: var(--ink-soft); font-size: 16px; margin-bottom: 32px; }
+  .btn {
+    display: inline-block;
+    background: var(--grad-hot);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 14px 30px;
+    border-radius: 999px;
+    box-shadow: 0 12px 34px rgba(255, 92, 157, 0.35);
+    transition: transform 0.2s;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn:focus-visible { outline: 3px solid var(--violet); outline-offset: 3px; }
+  .links { margin-top: 28px; font-size: 14px; }
+  .links a { color: var(--ink-soft); text-decoration: none; margin: 0 10px; font-weight: 600; }
+  .links a:hover { color: var(--pink); }
+  .links a:focus-visible { outline: 2px solid var(--violet); outline-offset: 3px; border-radius: 4px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="logo"><span class="logo-dot"></span>SKINNA</div>
+    <div class="code">404</div>
+    <h1>This page took a day off.</h1>
+    <p>We couldn't find what you were looking for — but your best look is still just one photo away.</p>
+    <a class="btn" href="/">Back to home</a>
+    <div class="links">
+      <a href="/support.html">Support</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+    </div>
+  </div>
+</body>
+</html>
